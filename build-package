@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+WORKDIR=$(dirname "$0")
+DOCDIR="$WORKDIR/package/usr/share/doc/systemd-dropbox"
+OUTDIR="$WORKDIR/bin"
+
+mkdir -p "$DOCDIR"
+
+git log --oneline --no-merges > "$DOCDIR/changelog"
+gzip -f -9 "$DOCDIR/changelog"
