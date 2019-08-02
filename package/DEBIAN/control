@@ -1,0 +1,9 @@
+Package: system-dropbox
+Version: 0.1.0
+Section: net
+Priority: optional
+Maintainer: Matthew Holder <sixxgate@hotmail.com>
+Architecture: all
+Depends: dropbox-cli | dropbox | nautilus-dropbox
+Description: Dropbox as a system service.
+ Provides a means to run Dropbox as a system service.
