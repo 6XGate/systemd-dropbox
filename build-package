@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+WORKDIR=$(dirname "$0")
+ROOTDIR="$WORKDIR/package"
+DOCDIR="$ROOTDIR/usr/share/doc/systemd-dropbox"
+OUTDIR="$WORKDIR/bin"
+
+mkdir -p "$DOCDIR"
+
+# Generate the changelog
+git log --oneline --no-merges > "$DOCDIR/changelog"
+gzip -f -9 "$DOCDIR/changelog"
+
+# Build the package.
+mkdir -p "$OUTDIR"
+fakeroot dpkg-deb --build "$ROOTDIR" "$OUTDIR/systemd-dropbox.deb"
