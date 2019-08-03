@@ -23,7 +23,7 @@ Description=Dropbop as a system service
 After=local-fs.target network.target
 
 [Service]
-Type=fork
+Type=forking
 ExecStart=/usr/bin/env dropbox start
 ExecStop=/usr/bin/env dropbox stop
 PIDFile=/home/%i/.dropbox/dropbox.pid

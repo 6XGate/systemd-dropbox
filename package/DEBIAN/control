@@ -1,4 +1,4 @@
-Package: system-dropbox
+Package: systemd-dropbox
 Version: 0.1.0
 Section: net
 Priority: optional
